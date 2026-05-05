@@ -2,19 +2,25 @@
 #include <stdlib.h>
 #include <cwchar>
 #include <clocale>
+#include <algorithm>
+#include <windows.h>
 
-void trier(int *tab,int taille)
-{
-	for (int k = 0; k < 20; k++)
-		for (int n = 0; n < 20; n++)
+	void trier(int* tab, int taille)
+	{
+		std::sort(tab, tab + taille);
+	}
+
+	void affiche(int* tab,int taille) 
+	{
+		for (int i = 0; i < taille; i++)
 		{
-			if  ((tab, n, k) != n) { //cette condition permet de trier les valeurs du tableau du plus grand au plus petit.
-				int temp = tab[k];
-				tab[k] = tab[n];
-				tab[n] = temp;
-			}
+			printf("la valeur numero %d est : %d\n",i, tab[i]);
 		}
-}
+
+
+	}
+
+
 
 int main()
 {
@@ -24,10 +30,12 @@ int main()
 
 	for (int i =0 ; i < 6; i++)
 	{
-		printf("donnez valeur n° %d a triez \n",i);
+		printf("donnez valeur numero %d a triez \n",i);
 		scanf_s("%d", &tab[i]);
 	}	
 	trier(tab,6);
+	affiche(tab,6);
+
 
 	return 0;
 }
