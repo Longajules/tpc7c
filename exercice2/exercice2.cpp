@@ -25,7 +25,7 @@
 int main()
 {
 
-	int* tab = (int*)malloc(6 * sizeof(int));
+	int* tab = (int*)malloc(7 * sizeof(int));
 
 
 	for (int i =0 ; i < 6; i++)
@@ -36,6 +36,7 @@ int main()
 	trier(tab,6);
 	affiche(tab,6);
 
+	printf("%f %p\n", tab[6], &tab[6]);
 
 	return 0;
 }
